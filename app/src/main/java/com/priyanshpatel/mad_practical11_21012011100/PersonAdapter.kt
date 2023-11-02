@@ -1,5 +1,6 @@
 package com.priyanshpatel.mad_practical11_21012011100
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -33,6 +34,7 @@ class PersonAdapter(private val context: Context, private val array: ArrayList<P
     override fun getItemCount(): Int {
         return array.size
     }
+    @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
         val person = array[position]
         holder.nameTxt.text = person.name
@@ -48,7 +50,7 @@ class PersonAdapter(private val context: Context, private val array: ArrayList<P
             }
         }
         holder.deleteBtn.setOnClickListener {
-            var count = databaseHelper.deletePerson(person.id)
+            val count = databaseHelper.deletePerson(person.id)
             if(count > 0)
             {
                 Toast.makeText(this.context, "${person.name}'s details deleted successfully!",

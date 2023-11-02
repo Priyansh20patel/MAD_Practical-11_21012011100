@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_button1"
+        android:id="@+id/sqliteDB"
         android:title="Button 1"
         app:showAsAction="always"
         android:icon="@drawable/window" />
 
     <item
-        android:id="@+id/action_button2"
+        android:id="@+id/jsonDB"
         android:title="Button 2"
         app:showAsAction="always"
-        android:icon="@drawable/autorenew" />
+        android:icon="@drawable/baseline_autorenew_24" />
 </menu>

@@ -1,21 +1,17 @@
 package com.priyanshpatel.mad_practical11_21012011100
 
-import android.provider.ContactsContract.CommonDataKinds.Email
-
-import android.location.Address
 import org.json.JSONObject
 import java.io.Serializable
-import java.util.jar.Attributes
 
-class Person ( var id:String,
-               var name:String,
-               var emailId:String,
-               var phoneNo:String,
-               var address:String,
-               var latitude:Double,
-               var longitude:Double
-):Serializable{
-    constructor(jsonObject:JSONObject):this("","","","","",0.0,8.0) {
+
+class Person (var id: String,
+              var name: String,
+              var emailId: String,
+              var phoneNo: String,
+              var address: String,
+              var latitude: Double,
+              var longitude: Double):Serializable{
+    constructor(jsonObject: JSONObject):this("","","","","",0.0,0.0) {
         id = jsonObject.getString("id")
         emailId = jsonObject.getString("email")
         phoneNo = jsonObject.getString("phone")

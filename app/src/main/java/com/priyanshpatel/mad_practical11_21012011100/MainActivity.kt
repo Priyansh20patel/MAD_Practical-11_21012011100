@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         databaseHelper = DatabaseHelper(this)
-        var toolBar : Toolbar = findViewById(R.id.toolbar)
+        val toolBar : Toolbar = findViewById(R.id.toolbar)
 
         setSupportActionBar(toolBar)
 
@@ -68,12 +68,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_button1 -> {
+            R.id.sqliteDB -> {
                 Toast.makeText(this@MainActivity, "Clicked on item at menu!", Toast.LENGTH_SHORT).show()
                 return true
             }
-            R.id.action_button2 -> {
-                var personList: ArrayList<Person> = databaseHelper.getAllPersons()
+            R.id.jsonDB -> {
+                val personList: ArrayList<Person> = databaseHelper.getAllPersons()
                 recyclerView.layoutManager = LinearLayoutManager(this)
                 recyclerView.adapter = PersonAdapter(this, personList)
                 return true
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                 personList.add(person)
             }
             recyclerView.layoutManager = LinearLayoutManager(this)
-            recyclerView.adapter =PersonAdapter(this, personList)
+            recyclerView.adapter = PersonAdapter(this, personList)
         }
         catch (e: JSONException)
         {
